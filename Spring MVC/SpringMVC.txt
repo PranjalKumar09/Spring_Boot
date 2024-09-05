@@ -1,0 +1,27 @@
+SpringMVC 
+========= 
+    A SpringMVC is sub framework which is used to build web application
+    Build on top of Serviet API 
+    Follows Model View Controller design pattern
+    Implement basic feature of core spring like inversion of Control, Dependency injection
+
+
+
+SpringMVC
+==========
+    Seprate each role modal, view , controller etc 
+    Powerful configuration
+    Sub frameworkm of spring Framework. Use of spring core features  like IOC etc.
+    Rapid application development
+    Spring MVC is flexible , easy to test
+
+
+MVC ->  Way to organize code 
+        Distrubuting work
+
+    See image: Spring-MVC-Flow-Diagram.png
+    Dispacther Servlet is Front Controller 
+
+
+
+
