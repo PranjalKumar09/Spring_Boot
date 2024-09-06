@@ -23,5 +23,97 @@ MVC ->  Way to organize code
     Dispacther Servlet is Front Controller 
 
 
+    Configuration
+    =============
+        We first downloaded the tomcat v 10 then this eclipse latest version
+        The in eclipse we donloaded the server option by help 
+        Then maked a maven project , 
+            Then we have to get mvc online, Search Moren spring mvc , then paste code (which we get from ) (paste b/w in url and properties)
 
+    
+    Spring MVC Application Creation Steps
+    =====================================
+        1. Configure Dispacther servlet in web.xml 
+            Ex-> we putted the below thing web.xml
+                 
+  <servlet>
+    <servlet-name>spring</servlet-name>  <!-- There can any name -->
+    <servlet-class>org.springframework.web.servlet.DispatcherServlet</servlet-class>   <!-- must put with caution -->
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>spring</servlet-name>  
+    <url-pattern>/</url-pattern>        <!-- Now this will handle all type of url -->
+  </servlet-mapping>
+
+
+
+        2. Create Spring Configuration file
+            Make Configuration file in same folder in whihc web.xml is there , keep its name like <servlet-name>-servlet.xml , like here spring-servlet.xml 
+            Now copy any configuration file & paste it , like 
+        
+        <?xml version="1.0" encoding="UTF-8"?>
+        <beans xmlns="http://www.springframework.org/schema/beans"
+            xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+            xmlns:context="http://www.springframework.org/schema/context"
+            xmlns:mvc="http://www.springframework.org/schema/mvc"
+            xsi:schemaLocation="
+                    http://www.springframework.org/schema/beans 
+                    http://www.springframework.org/schema/beans/spring-beans.xsd
+                    http://www.springframework.org/schema/context 
+                    http://www.springframework.org/schema/context/spring-context.xsd
+                    http://www.springframework.org/schema/mvc 
+                    http://www.springframework.org/schema/mvc/spring-mvc.xsd">
+
+        
+
+        </beans>
+
+
+
+
+
+
+        3. Configure View Resolver
+        In spring-mvc, insert following bean in beans
+        
+        <bean 
+            class="org.springframework.web.servlet.view.InternalResourceViewResolver" 
+            name="viewResolver">
+            <property name="prefix" value="/WEB-INF/views"/>
+            <property name="suffix" value=".jsp" ></property>
+
+
+    </bean>
+
+
+        4. Create Controller
+            in src/main/java 
+            create controller (.java)
+
+
+package springmvc.controller;
+
+import org.springframework.stereotype.Controller;
+import org.springframework.web.bind.annotation.RequestMapping;
+
+@Controller // when we write this in
+public class HomeController {
+	@RequestMapping("/home")
+	public String home() {
+		System.out.println("this is home url");
+		return "index";
+	}
+	
+}
+
+
+
+here we can unerstand that point 3 in seding the location (by suffix & prefix)
+
+
+
+
+
+        5. Create View to show the
 
